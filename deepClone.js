@@ -124,7 +124,7 @@ function cloneSymbol(target) {
     return Object(Symbol.prototype.valueOf.call(target));
 }
 function cloneFunction(func) {
-    const bodyReg = /(?<={)(.|\n)+(?=})/m;
+    const bodyReg = /(?<={)(.|\n|\r\n)+(?=})/m;
     const paramReg = /(?<=\().+(?=\)\s+{)/;
     const funcString = func.toString();
     if (func.prototype) {
